@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { getArrayFromFile } = require("../file-helper");
+const { getInput } = require("../advent-utils");
 
 const input = "./3/input.txt";
 
@@ -9,10 +9,10 @@ describe("Day 3: Perfectly Spherical Houses in a Vacuum", function (){
         assert.strictEqual(deliver('^v^v^v^v^v', false), 2);
     });
     it("Part 1 Solve => 2081", function(){
-        assert.strictEqual(deliver(getArrayFromFile(input)[0], false), 2081);
+        assert.strictEqual(deliver(getInput(input), false), 2081);
     });
     it("Part 2 Solve => 2341", function(){
-        assert.strictEqual(deliver(getArrayFromFile(input)[0], true), 2341);
+        assert.strictEqual(deliver(getInput(input), true), 2341);
     });
    
 });

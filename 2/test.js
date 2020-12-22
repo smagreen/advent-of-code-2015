@@ -1,7 +1,8 @@
 const assert = require("assert");
-const { getArrayFromFile } = require("../file-helper");
+const { pipe, getInput, getLines } = require("../advent-utils");
 
-const input = "./2/input.txt";
+const part1Solve = () => pipe(getInput, getLines, paper)("./2/input.txt");
+const part2Solve = () => pipe(getInput, getLines, ribbon)("./2/input.txt");
 
 // https://adventofcode.com/2015/day/2
 describe("Day 2: I Was Told There Would Be No Math", function (){
@@ -12,7 +13,7 @@ describe("Day 2: I Was Told There Would Be No Math", function (){
         assert.strictEqual(paper(['2x3x4']), 58);
     });
     it("Part 1 Solve => 1598415", function(){
-        assert.strictEqual(paper(getArrayFromFile(input)), 1598415);
+        assert.strictEqual(part1Solve(), 1598415);
     });
     it("Part 2 2x3x4 => 58", function(){
         assert.strictEqual(ribbon(['2x3x4']), 34);
@@ -21,7 +22,7 @@ describe("Day 2: I Was Told There Would Be No Math", function (){
         assert.strictEqual(ribbon(['1x1x10']), 14);
     });
     it("Part 2 Solve => 3812909", function(){
-        assert.strictEqual(ribbon(getArrayFromFile(input)), 3812909);
+        assert.strictEqual(part2Solve(), 3812909);
     });
 });
 
